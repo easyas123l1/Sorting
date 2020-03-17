@@ -20,6 +20,22 @@ def binary_search(arr, target):
   high = len(arr)-1
 
   # TO-DO: add missing code
+  found = False
+
+  while low <= high and not found:
+    #find middle using division
+    middle = (low + high) // 2
+
+    if arr[middle] == target:
+      return middle
+
+    else:
+      if target <arr[middle]:
+        # search lower half
+        high = middle - 1
+      else:
+        #search upper half
+        low = middle + 1
 
   return -1 # not found
 
